@@ -5,6 +5,12 @@
     margin: 2rem;
     @include flex-column;
     align-items: center;
+    background-color: rgba($color: #451804, $alpha: 0.7);
+    padding: 1rem;
+
+    &__header{
+        @include divider;
+    }
 
     &__date{
         margin-top: 1rem;

@@ -1,0 +1,8 @@
+@use "../../assets/partials/variables" as *;
+@use "../../assets/partials/mixins" as *;
+
+.home{
+    @include flex-column;
+    align-items: center;
+    height: 100vh;
+}

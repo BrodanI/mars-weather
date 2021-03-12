@@ -2,35 +2,29 @@
 @use "../../assets/partials/mixins" as *;
 
 .weather{
+    position: relative;
+    top: 40vh;
     @include flex-row;
     flex-wrap: wrap;
-    justify-content: center;
-    background-color: rgba($color: grey, $alpha: 0.7);
-    width: 70%;
+    background-color: rgba($color: #451804, $alpha: 0.7);
+
     padding: 1rem;
     margin: 1rem;
 
-    &__day{
+    &__info{
+
         @include divider;
-
-        width: 80%;
-
-        &-mars{
-
-        }
-
-        &-earth{
-
-        }
-    }
-
-    &__temp{
         width: 80%;
 
         &-details{
             @include flex-row;
-            // justify-content: center;
             align-items: baseline;
+
+        }
+
+        &--light-font{
+            font-weight: 400;
+            padding-left: .5rem;
         }
     }
 }
