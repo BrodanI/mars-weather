@@ -1,0 +1,12 @@
+@use "../../assets/partials/variables" as *;
+@use "../../assets/partials/mixins" as *;
+
+.main{
+    margin: 2rem;
+    @include flex-column;
+    align-items: center;
+
+    &__date{
+        margin-top: 1rem;
+    }
+}

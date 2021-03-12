@@ -1,0 +1,15 @@
+
+
+@mixin divider {
+    border-bottom: 1px solid grey;
+}
+
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,16 @@
+@use './assets/partials/mixins' as *;
+@use './assets/partials/variables' as *;
+
+html{
+    box-sizing: border-box;
+    // Placeholder img
+        background-image: url("../src/assets/images/pia22486-main.jpg");
+    background-position: inherit;
+
+}
+
+*, *:before, *:after{
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: inherit;
+    margin: 0px;
+}

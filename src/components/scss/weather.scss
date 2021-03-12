@@ -1,0 +1,36 @@
+@use "../../assets/partials/variables" as *;
+@use "../../assets/partials/mixins" as *;
+
+.weather{
+    @include flex-row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgba($color: grey, $alpha: 0.7);
+    width: 70%;
+    padding: 1rem;
+    margin: 1rem;
+
+    &__day{
+        @include divider;
+
+        width: 80%;
+
+        &-mars{
+
+        }
+
+        &-earth{
+
+        }
+    }
+
+    &__temp{
+        width: 80%;
+
+        &-details{
+            @include flex-row;
+            // justify-content: center;
+            align-items: baseline;
+        }
+    }
+}
