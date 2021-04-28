@@ -2,17 +2,13 @@
 @use "../../assets/partials/mixins" as *;
 
 .weather{
-    position: relative;
-    top: 40vh;
     @include flex-row;
     flex-wrap: wrap;
     background-color: rgba($color: #451804, $alpha: 0.7);
-
     padding: 1rem;
     margin: 1rem;
 
     &__info{
-
         @include divider;
         width: 80%;
 
