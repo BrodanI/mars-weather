@@ -7,8 +7,8 @@ function Main(props) {
             <h1 className="main__header">Weather on Mars!</h1>
 
             <section className="main__date">
-                <h2>Mars Date: {props.marsDate}</h2>
-                <h2>Earth Date: {props.earthDate}</h2>
+                <h2>Image From: The {props.backgroundImageContext} </h2>
+                <h2>On The: {props.backgroundImageRover} Rover</h2>
             </section>
         </div>
     );

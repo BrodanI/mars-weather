@@ -16,6 +16,8 @@ class Home extends Component {
         sunset: "",
         pressure: "",
         backgroundImage: "",
+        backgroundImageContext: "",
+        backgroundImageRover: "",
     };
     getRandomInt(max) {
         return Math.floor(Math.random() * Math.floor(max));
@@ -29,12 +31,9 @@ class Home extends Component {
         const responseTwo = responses[1].data;
         let TotalPhotos = responseTwo.latest_photos.length + 1;
         let ChosenPhoto = responseTwo.latest_photos[this.getRandomInt(TotalPhotos)];
-        console.log(ChosenPhoto.img_src)
         let d = new Date(responseOne.terrestrial_date);
-        console.log(responseOne.terrestrial_date);
         let day = d.getDate() + 1;
         let month = d.getMonth() + 1;
-        console.log( month + "/" + day + "/" + d.getFullYear());
         this.setState({
             marsDate: responseOne.sol,
             earthDate:  month + "/" + day + "/" + d.getFullYear(),
@@ -45,6 +44,8 @@ class Home extends Component {
             sunset: responseOne.sunset,
             pressure: responseOne.pressure,
             backgroundImage: ChosenPhoto.img_src,
+            backgroundImageContext: ChosenPhoto.camera.full_name,
+            backgroundImageRover: ChosenPhoto.rover.name,
         });
     })
 )}
@@ -58,7 +59,6 @@ class Home extends Component {
             const responseTwo = responses[1].data;
             let TotalPhotos = responseTwo.latest_photos.length + 1;
             let ChosenPhoto = responseTwo.latest_photos[this.getRandomInt(TotalPhotos)];
-            console.log(ChosenPhoto.img_src)
             let d = new Date(responseOne.terrestrial_date);
             let day = d.getDate() + 1;
             let month = d.getMonth() + 1;
@@ -72,14 +72,16 @@ class Home extends Component {
                 sunset: responseOne.sunset,
                 pressure: responseOne.pressure,
                 backgroundImage: ChosenPhoto.img_src,
+                backgroundImageContext: ChosenPhoto.camera.full_name,
+                backgroundImageRover: ChosenPhoto.rover.name,
             });
         })
     )}
 }
     render() {
         return (
-            <div className="home" style={{backgroundImage: `url(${this.state.backgroundImage})`}}>
-                <Main marsDate= {this.state.marsDate} earthDate ={this.state.earthDate}/>
+            <div className="home" style={{backgroundImage: `url(${this.state.backgroundImage})`,  }}>
+                <Main backgroundImageContext={this.state.backgroundImageContext} backgroundImageRover={this.state.backgroundImageRover}/>
                 <Weather 
                     marsDate={this.state.marsDate}
                     earthDate ={this.state.earthDate}
